@@ -1,0 +1,46 @@
+Qs1) How to check if git is available on your system?
+Ans: To check whether or not you have git installed, simply open a "terminal window and tyoe 'git --version' ".
+
+Qs2) How to initialize a new Git repository?
+Ans: To initialize a new Git repository, you can use the following steps:
+1. Crate a new folder for you porject
+2. Open a terminal window and navigate to the new folder.
+3. Run this command 'git init' , this will create a new Git repository in the Current folder.
+
+Qs3) How to tell git about your name and email?
+Ans: To tell Git about your name and email, you can use the "git config" command. Open your teminal or command prompt and type : git config --global user.name "Your Name" and git config --global user.email "Your email-id".
+
+Qs4) How to add a file to the staging area?
+Ans: To add a file to the staging area, you can use the 'git add <filenme>' command.
+Here are the steps on how to add a file to the staging area:
+1. Open a terminal window.
+2. Navigate to the directory containing the file you want to add.
+3. Run the following command: 'git add <filename>'
+
+Qs5) How to remove a file from the staging area?
+And: To remove a file to the staging area, you can use the 'git rm --cached <filenme>' command.
+Here are the steps on how to remove a file to the staging area:
+1. Open a terminal window.
+2. Navigate to the directory containing the file you want to remove.
+3. Run the following command: 'git rm --cached <filename>'
+
+Qs6) How to make a commit?
+Ans: To make a commit, you can use the 'git commit -m "Comment whatever you write here"' command.
+Here are the steps on how to remove a file to the staging area:
+1. Open a terminal window.
+2. Navigate to the directory containing the file you want to commit.
+3. Run the following command: 'git commit -m "Comment whatever you write here"'
+
+Qs7) How to send your changes to a remote repository?
+Ans: To send changes to a remote repository, you can follow these steps:
+1. Open your command prompt or terminal window.
+2. Navigate to the local directory of your repository.
+3. Run the command "git add ." to add all changes to the staging area.
+4. Run the command "git commit -m 'Commit message'" to create a new commit with your changes.
+5. Run the command "git push origin master" or "git push origin your-branch-name" to push your changes to the remote repository.
+
+Qs8) What is the difference between clone and pull?
+Ans: git clone : It is used to clone the repository to the working directory of the developer.
+Syntax : git clone <url>
+git pull : It is used to fetch the latest changes made in the remote repository to the working directry.
+Syntax: git pull
