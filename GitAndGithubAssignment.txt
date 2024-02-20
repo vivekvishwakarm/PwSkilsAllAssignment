@@ -1,0 +1,36 @@
+Qs1) What is Git?
+Ans: Git is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing souce code during software development.
+
+Qs2) What do you understand by the term 'Version Control System'?
+Ans: Version Control System is a softwate that records changes to a file over time, so that we can recall specific versions later, i.e, for every source code change in a file a new version will be created.
+
+Qs3) What is GitHub?
+Ans: GitHub is a web-based platform that provides hosting for software development projects, allowing users to store, share, and collaborate on their code. It offers a wide range of features such as version control, code review, issue trackin, and prject mnagement tools. GitHub is used by developers, teams, and organization of all sizes to manage their code and collaborate with others. It is a popular platform for open-source software development and has a large and active community of users.
+
+Qs4) Mention some popular Git hosting services.
+Ans: Some popular Git hosting services are Github, Gitlab, BitBucket, GitBlit.
+
+Qs5) Different Types of version control system.
+Ans: There are 3 types of VCS
+1. Local Version Control System (LVCS) 
+2. Centralised Control System (CVCS)
+3. Distributed Version Control System (DVCS)
+
+Qs6) What benefits come with using GIT?
+Ans: Git is a version control system widely used in softwre development. Some benefits of using Git include:
+1. Collaboration: Git allows multiple developers to work on the same project simultaneously without overwriting each other's changes.
+2. Version control: Git keeps track of all the changes made to a project, allowing developers to easily revert to previous versions or merge change.
+3. Branching and merging: Git allows developers to work on separate features or bug fixes without affecting the main codebase, and then merge those changes back into th main code.
+4. Scalability: Git is designed to handle large and complex projects, making it a popular choice for organizations of all sizes. Overall, using Git can.
+
+Qs7) What is Git repository?
+Ans: A Git repository is a folder on your computer that store all the files and changes for a progect. These files are tracked by Git, which helps you keep track of who made change, when changes are made, and the specific changes that were made. Git also makes it easy for multiple people to work on the same project simultaneously without overwriting each other's changes. Users can clone a Git repository to work on a project on their own computer, or push changes back to the original repository to share their work with others.
+
+Qs8) How can you initialize a repository in Git?
+Ans: To initialize a repository in Git, follow these steps:
+1. Open a Git Bash
+2. Navigate to the directory where you want to create the Git repository.
+3. Type the command : git init 
+4. Git wil create a new repository with default sttings.
+5. Verify that the repository has been initialized successfully by running the command : git status . This should return a list of files that are currently untracked.
+6. Once your repository is initialized, you can start committing changes and pushing them.
