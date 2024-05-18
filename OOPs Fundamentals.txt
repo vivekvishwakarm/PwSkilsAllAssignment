@@ -1,0 +1,87 @@
+#OOPs Fundamentals
+
+Qs1. How to create an object in Java?
+Ans: Creating an object in Java : 
+1. Define a Class:  A class acts as a blueprint for creating objects. It defines the properties (attributes) and functionalities (methods) that objects of that class will possess.
+2. Use new Keyword:  The new keyword is used to allocate memory for a new object and invoke the constructor of the class. The constructor is a special method that initializes the object's state.
+
+
+Qs2. What is the use of a new keyword in Java?
+ANs: In Java, the new keyword is used to allocate memory for a new object and invoke the constructor of the class. The constructor is a special method that initializes the object's state.
+
+Qs3. What are the different types of variables in Java?
+Ans: 
+Division 1 : 
+
+Based on the type of value represented by a variable all variables are divided into 2 types. They are:
+
+ 1. Primitive variables 
+
+ 2. Reference variables
+
+
+Primitive variables: 
+
+Primitive variables can be used to represent primitive values. 
+
+Example: int x=10; 
+
+Reference variables: Reference variables can be used to refer objects. 
+
+Example: Student s=new Student(); 
+
+Division 2 :
+
+Based on the behavior and position of declaration all variables are divided into the following 3 types.
+
+ 1. Instance variables 
+
+ 2. Static variables 
+
+ 3. Local variables
+
+
+Qs4. What is the difference between Instance variable and Local Variables?
+Ans: 
+Key Differences
+
+Declaration Location:-
+Instance Variable: Inside a class but outside any method, constructor, or block.
+Local Variable: Inside a method, constructor, or block.
+
+Scope:-
+Instance Variable: Entire class.
+Local Variable: Limited to the block in which it is declared.
+
+Lifetime:-
+Instance Variable: Exists as long as the object exists.
+Local Variable: Exists only during the execution of the block.
+
+Initialization:-
+Instance Variable: Automatically initialized with default values.
+Local Variable: Must be explicitly initialized before use.
+
+Access Modifiers:-
+Instance Variable: Can have access modifiers.
+Local Variable: Cannot have access modifiers.
+
+
+Qs5. In which area memory is allocated for instance variable and local variable.
+Ans: 
+1. Instance Variables:-
+I. Memory Area: Allocated in the heap.
+II. Lifecycle: Lives as long as the object exists.
+III. Accessibility: Accessible via object references and can have access modifiers.
+2. Local Variables:
+I. Memory Area: Allocated in the stack.
+II. Lifecycle: Lives as long as the method or block execution lasts.
+III. Accessibility: Accessible only within the method or block they are declared in and do not have access modifiers.
+
+
+
+Qs6. What is method overloading?
+Ans: Method overloading in Java is a feature that allows you to define multiple methods in a class with the same name, but with different parameters. This provides flexibility in how you can call the method depending on the type and number of arguments you provide.
+
+Here are the key points about method overloading:
+1. Same Name: Methods can have the same name as long as their parameter lists differ.
+2. Parameter Differences: The difference can be in the number of parameters, their data types, or both.
