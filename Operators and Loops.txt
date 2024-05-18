@@ -1,0 +1,160 @@
+Qs1: What are the conditional Operators in Java?
+Ans:  In Java, conditional operators are used to execute specific blocks of code based on certain conditions. The three types of conditional operators in Java are: the if statement, the else-if statement, and the switch statement. The if statement is used when you want to execute a block of code if a certain condition is true. The else-if statement is used when you want to execute a block of code if a certain condition is true and another condition is false. The switch statement is used when you want to execute a specific block of code based on a value.  
+
+
+
+Qs2: What are the types of operators based on the number of operands?
+Ans: In Java, operators can be classified into three types based on the number of operands they take:
+
+1. Unary Operators: These operators operate on a single operand. Examples include increment (++) and decrement (--) operators, the negation (-) operator (e.g., -x), and the logical NOT (!) operator.
+
+2. Binary Operators: These operators operate on two operands. This is the most common type of operator in Java. Examples include arithmetic operators (+, -, *, /), assignment operators (=, +=, -=, *=, /=), relational operators (==, !=, <, >, <=, >=), logical operators (&&, ||, !), and bitwise operators (&, |, ^, ~).
+
+3. Ternary Operator: Java has one ternary operator, which is a shorthand for an if-else statement. It takes three operands and evaluates to a value based on a condition. The syntax is: `condition ? expression_if_true : expression_if_false.
+
+
+
+Qs3: What is the use of Switch case in Java Programming?
+Ans: The switch statement in Java is a multi-way branching statement. It allows you to execute different code blocks based on the value of a single expression. It's a more concise and readable way to handle multiple conditions compared to a series of chained if-else statements.
+
+Here's how a typical switch statement works:
+switch (expression) {
+  case value1:
+    // code to execute if expression == value1
+    break;
+  case value2:
+    // code to execute if expression == value2
+    break;
+  // ... more cases
+  default:
+    // code to execute if no case matches
+}
+
+Explanation:
+
+1. The expression is evaluated once at the beginning.
+2. The value of the expression is compared with each case value.
+3. If a match is found, the code block associated with that case is executed.
+4. The break statement (optional) is used to exit the switch block after a matching case is found. If break is omitted, the code will continue checking and executing subsequent cases until a break is encountered or the end of the switch block is reached.
+5. The default case (optional) is used to execute code if no matching case is found.
+
+
+
+Qs5: What are the conditional Statements and use of conditional statements?
+Ans: Conditional statements are fundamental building blocks in Java programming that control the flow of your code based on certain conditions. They allow your program to make decisions and execute different code sections depending on whether a condition is true or false.
+
+Here are the main types of conditional statements in Java and their uses:
+
+1. if statement: This is the most basic conditional statement. It checks a single condition and executes a block of code only if the condition is true.
+
+if (condition) {
+    // code to execute if condition is true
+}
+
+2. if-else statement: This extends the if statement by providing an alternative block of code to execute if the condition in the if statement is false.
+
+if (condition) {
+    // code to execute if condition is true
+} else {
+    // code to execute if condition is false
+}
+
+3.  else if statement: This allows you to chain multiple conditions together. It's used when there are more than two possible outcomes based on different conditions.
+
+if (condition1) {
+    // code to execute if condition1 is true
+} else if (condition2) {
+    // code to execute if condition1 is false and condition2 is true
+} else {
+    // code to execute if both condition1 and condition2 are false
+}
+
+4. switch statement: This is a multi-way branching statement used when you have multiple possible conditions based on a single expression's value. It's a more concise alternative to chained if-else if statements for specific scenarios.
+
+switch (expression) {
+    case value1:
+        // code to execute if expression == value1
+        break;
+    case value2:
+        // code to execute if expression == value2
+        break;
+    // ... more cases
+    default:
+        // code to execute if no case matches
+}
+
+Uses of Conditional Statements:
+
+Conditional statements are used extensively in Java programming for various purposes, including:
+
+Validating user input: Checking if user input meets certain criteria before proceeding.
+Making choices based on data: Executing different code blocks depending on the values of variables or properties.
+Handling errors: Checking for errors or exceptions and taking corrective actions.
+Creating interactive programs: Implementing menus with user choices or responding to different game states.
+Simulating real-world logic: Modeling decision-making processes within your program.
+
+
+Qs4: What are the priority levels of arithmetic operation in Java?
+Ans: Java uses operator precedence to determine the order in which expressions are evaluated within a single statement. This ensures that complex calculations are performed correctly. Here's how arithmetic operation priorities work in Java:
+
+Precedence Levels:
+
+1. Parentheses (): Highest precedence. Expressions within parentheses are evaluated first, regardless of other operators inside.
+2. Unary minus -, unary plus +: Applied to a single operand (e.g., -x, +y). Used before multiplication and division.
+3. Multiplication *, Division /, Modulus %: Left-to-right associativity. Multiplication, division, and modulo are performed from left to right before addition and subtraction.
+Addition +, Subtraction -: Left-to-right associativity. Addition and subtraction are evaluated from left to right after multiplication, division, and modulo.
+Understanding Precedence with Examples:
+
+1. 1 + 2 * 3 evaluates to 7 because multiplication (2 * 3) happens first, then addition (1 + 7).
+2. -5 * (2 + 1) evaluates to -15 because the expression in parentheses is evaluated first (-5 * 3), then negation (-15).
+
+
+Qs6. What is the syntax of if-else statement?
+Ans: Syntax of if-else statement is:
+if (condition) {
+    // code to execute if condition is true
+} else {
+    // code to execute if condition is false
+}
+
+
+Qs7. What are the 3 types of iterative statements in java?
+Ans: Java provides three main types of iterative statements, also known as looping statements, to execute a block of code repeatedly:
+1. for loop: This loop is typically used when the number of iterations is known beforehand. It's concise and readable for iterating through a fixed number of times or processing elements within a collection.
+2. while loop: This loop is more flexible and is used when the number of iterations is not known in advance, or the loop needs to continue as long as a certain condition is true.
+3. do-while loop: This loop is similar to the while loop, but it guarantees that the code block inside the loop will be executed at least once, even if the initial condition is false.
+
+Qs8.Write the difference between for loop and do-while loop?
+Ans: Here's a breakdown of the key differences between for loops and do-while loops in Java:
+
+Structure:
+
+- for loop: `for (initialization; condition; increment/decrement) { ... }`
+- do-while loop: `do { ... } while (condition);`
+
+Iteration Condition:
+
+- for loop: The condition is checked before each iteration. The loop continues as long as the condition is true.
+- do-while loop: The condition is checked after each iteration. The loop continues as long as the condition is true.
+
+Guaranteed Execution:
+
+- for loop: The code block inside the loop may not execute at all if the initial condition is false.
+- do-while loop: The code block inside the loop will always execute at least once, even if the condition is initially false.
+
+Use Cases:
+
+- for loop: Ideal for iterating a fixed number of times or processing elements within a collection when you know the number of elements beforehand.
+- do-while loop: Useful when you need the code to execute at least once, and then continue looping as long as a certain condition is true. This is helpful for situations where the initialization or setup needs to happen before the loop starts, but the loop body might still need to run even if the condition initially fails. 
+
+
+Qs9. Write a program to print number from 1 to 10.
+Ans: 
+public class PrintNumber{
+  public static void main(String []args){
+    int num=10;
+    for(int i=1; i<=num; i++){
+      System.out.print(i + " ");
+    }
+ }
+}
