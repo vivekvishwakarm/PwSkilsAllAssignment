@@ -1,0 +1,78 @@
+            Array Assignment
+Qs1. What is the default value of array for different data types?
+Ans: In Java, the default values of an array depend on the data type of the array elements. Here are the default values for different data types:
+byte: 0
+short: 0
+int: 0
+long: 0L
+float: 0.0f
+double: 0.0d
+char: '\u0000' (null character)
+boolean: false
+String: null
+For example, if you declare an int array with a size of 10, each element of the array will be initialized to 0. Similarly, if you declare a String array with a size of 5, each element of the array will be initialized to null.
+It is important to note that these are just the default values. You can explicitly initialize each element of the array to any value you want. For example, you could initialize the first element of an int array to 10, the second element to 20, and so on.
+
+Qs2. Can you pass the negative number in Array size?
+Ans: No, array dimensions cannot have a negative size. This is because the convention for array declaration requires that an array's size be greater than zero each time it's evaluated. Declaring an array's size as negative violates this condition and will result in an error.
+
+Qs3. Where does Array stored in JVM memory?
+Ans: In the Java Virtual Machine (JVM), arrays are stored in the heap memory. When an array is created, it is allocated memory in the heap, and the array's reference is stored in the stack memory.
+
+Qs4. What are the disadvantages of Array?
+Ans: Here are some of the disadvantages of using arrays in Java:
+(1) Fixed size:
+Arrays have a fixed size, so you can't add or delete elements after creation.
+(2) Can't resize dynamically:
+You can't resize arrays dynamically.
+(3) Can't store different data types:
+Unlike lists in Python, you can't store values of different data types in a single array.
+(4) Can be inefficient for large data sets:
+Arrays can be inefficient for large data sets because they have to be stored in contiguous memory locations.
+(5) Can be vulnerable to buffer overflows:
+Buffer overflows are a type of security vulnerability that can occur when an array is accessed out of bounds.
+
+Qs5. What is an Anonymous Array in Java? Give a example?
+Ans: An array without a name is called Anonymous Array.
+This type of array is created just for instant use.
+Ex:- 
+      class AnonymousArray {
+    public static void main(String[] args)
+    {
+          // anonymous array
+          sum(new int[]{ 1, 2, 3 });
+    }
+   
+    public static void sum(int[] a)
+    {
+        int total = 0;
+ 
+        // using for-each loop
+        for (int i : a) 
+            total = total + i;
+         
+        System.out.println("The sum is: " + total);
+    }
+}
+
+Qs6. What are the different ways to traverse an Array in java?
+Ans: 
+There are several ways to traverse an array in Java, each with its own advantages and use cases. Here are some common methods:
+Linear Search: Iterate through the array from start to end, checking each element until the desired element is found.
+Looping: Use a for loop or while loop to iterate through the array, accessing each element in sequence.
+Recursion: Define a recursive function that calls itself until it reaches the end of the array.
+Iterator: Use the Java Iterator interface to traverse the array, which provides a way to access elements without knowing their indices.
+Foreach Loop: Use a foreach loop to iterate through the array, which is a concise and readable way
+
+Qs7. What is the difference between length and length() method give an examples?
+Ans: 
+1. length : It is a properties of the array types class.
+code: 
+int[] intArray = new int[5];
+int arraySize = intArray.length;
+System.out.println(arraySize);
+2. length() : It is a method of String class.
+code:
+String simpleString = "Length example";
+int listSize = simpleString.length();
+System.out.println(listSize);
