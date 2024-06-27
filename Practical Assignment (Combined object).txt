@@ -1,0 +1,97 @@
+    Practical Assignment (Combined objects and array)
+Qs1: Write a program to demonstrate method overloading with 3 different parameters.
+Ans: 
+     public class OverLoading {
+
+    public void sum(int a, int b, int c){
+        System.out.println(a+b+c);
+    }
+    public void sum(double a, int b, double c){
+       System.out.println(a+b+c);
+    }
+    public void sum(double a,double b, double c){
+        System.out.println(a+b+c);
+    }
+    public static void main(String[] args) {
+       OverLoading ol = new OverLoading();
+       ol.sum(5, 9, 8);
+       ol.sum(9.8, 8, 9);
+       ol.sum(9.8, 8.6, 8.4);
+    }
+}
+
+
+Qs2. Write a program to create an object of an class which contain a method and call that class method in main method.
+Ans: 
+      public class MainMethod {
+    public int sum(int a, int b){
+        return a+b;
+    }
+    public static void main(String[] args) {
+        MainMethod mainMethod = new MainMethod();
+        System.out.println(mainMethod.sum(9, 5));
+    }
+}
+
+Qs3. Write a program to calculate the sum of all elements in an integer array?
+Ans:
+     public class ArraySum{
+
+        public int sum(int[] arrr){
+           
+            int sum = 0;
+           for(int i=0; i<arrr.length; i++){
+              sum += arrr[i];
+}
+        return sum;
+
+  }
+         public static void main(Strings [] args){
+              ArraySum as = new ArraySum();
+              int[] arr = {6,7,8,2};
+              System.out,println(as.sum(arr));
+}
+}
+
+Qs4. Write a Java program to find the index of a specific element in an integer array?
+import java.util.Scanner;
+
+public class FindIndexOfElement {
+
+    public int indexOfElement(int[] arr, int elem) {
+        for (int i = 0; i < arr.length; i++) {
+            if (elem == arr[i]) {
+                System.out.println("The index of element is: ");
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        FindIndexOfElement in = new FindIndexOfElement();
+        int[] arr = { 2, 5, 6, 8, 9 };
+        System.out.println("Enter the element");
+        int elem = scanner.nextInt();
+        System.out.println(in.indexOfElement(arr, elem));
+    }
+
+}
+
+Qs5. Write a Java program to print an entire array?
+import java.util.Scanner;
+
+public class PrintEntireArray {
+
+    public static void main(String[] args) {
+        int[] arr = { 2, 5, 6, 8, 9 };
+        System.out.println("Array element are: ");
+        for(int i = 0; i<arr.length; i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+    
+}
+
