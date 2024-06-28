@@ -1,0 +1,389 @@
+                           String Assignment : every parts in this in a sequence way
+
+Qs1. Write a java program to Reverse a string without using the inbuilt method.
+public class ReverseString {
+
+    public static void main(String[] args) {
+        String ntst = "";
+        String str = "Hello, World!";
+        System.out.println("Original String: " + str);
+        for (int i = 0; i < str.length(); ++i) {
+
+            char chr = str.charAt(i);
+            ntst = chr + ntst;
+        }
+
+        System.out.println("Reverse String is: " + ntst);
+
+    }
+}
+
+
+Qs2. Write a java program to know whether the given string is palindrome
+import java.util.Scanner;
+
+public class PalimdromString {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String rerSting = ""; //Storing reverse string
+        System.out.print("Enter one word to check, is plm or not: ");
+        String str = scanner.next();
+        String plm = str; // Save String in another variable
+        for (int i = 0; i < str.length(); ++i) {
+            char chr = str.charAt(i);
+            rerSting = chr + rerSting;
+        }
+        if (rerSting == plm) {
+            System.out.println("Yes: This is a Palimdrom String");
+        } else {
+            System.out.println("No: This is not a Palimdrom String");
+        }
+    }
+}
+
+
+Qs3. Write a java Program to convert upper case to lower case and vice versa.
+Ans: import java.util.Scanner;
+public class ConvtStringToLowerUpper {
+    public static String convertCase(String text) {
+        StringBuilder converedText = new StringBuilder();
+        for (char c : text.toCharArray()) { // Converts this string to a new character array.
+            int asciiValue = (int) c;
+            if (asciiValue >= 'a' && asciiValue <= 'z') {
+                converedText.append((char) (asciiValue - 32));
+            } else if (asciiValue >= 'A' && asciiValue <= 'Z') {
+                converedText.append((char) (asciiValue + 32));
+            } else {
+                converedText.append(c);
+            }
+        }
+        return converedText.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String converted = convertCase(input);
+        System.out.println(converted);
+    }
+}
+
+Qs4. Write a java program to remove a particular character from a String.
+public class RemPerticularChar {
+    public static String removeCharAtString(String text, char ch) {
+        String removeString = "";
+        for (char c : text.toCharArray()) {
+            if (c == ch) {
+                continue;
+            }
+            removeString = removeString + c;
+        }
+        return removeString;
+    }
+    public static void main(String[] args) {
+        String str = "Hello";
+        char remChar = 'l';
+        System.out.println(removeCharAtString(str, remChar));
+    }
+}
+
+
+Qs5. Write a java program to find the index of substring.
+public class SubstringIndex {
+
+    public static int findIndex(String mainString, String subString) {
+      if (mainString == null || subString == null || subString.isEmpty()) {
+        return -1; // Handle empty string or null cases
+      }
+  
+      for (int i = 0; i <= mainString.length() - subString.length(); i++) {
+        boolean match = true;
+        for (int j = 0; j < subString.length(); j++) {
+          if (mainString.charAt(i + j) != subString.charAt(j)) {
+            match = false;
+            break;
+          }
+        }
+        if (match) {
+          return i;
+        }
+      }
+  
+      return -1;
+    }
+  
+    public static void main(String[] args) {
+      String mainString = "This is a string to search";
+      String subString = "search";
+      int index = findIndex(mainString, subString);
+  
+      if (index == -1) {
+        System.out.println("Substring not found");
+      } else {
+        System.out.println("Substring found at index: " + index);
+      }
+    }
+  }
+-------------------------------------------------------------------------------------------------------------- 
+
+Qs1. What is String in Java?
+Ans: A string in Java is an object that represents a sequence of characters. It is a special type of object that is not a primitive data type. Strings are used to store and manipulate text data.
+
+Qs2. Types of String in Java are?
+Ans: There are two types of String:
+1. Mutable String:- meaning its content can be modified after creation (Changeable).
+2. Immutable String:- meaning its content can not be modified after creation (Not Changeable).
+
+Qs3. In how many ways can you create string object in Java.
+Ans: 
+(1): Using a string literal: A string literal is a sequence of characters enclosed in double quotes. For example, the following code creates a string object that contains the string "Hello, world!":
+Code: String str = "Hello, world!";
+(2): Using the new keyword: The new keyword can be used to create a new string object from a character array. For example, the following code creates a string object that contains the string "Hello, world!":
+Code: char[] chars = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '!'};
+      String str = new String(chars);
+
+Qs4. What is a string constant pool?
+In Java, a string constant pool (SCP) is a special area in the heap memory where literal string values are stored. The SCP is also known as the string pool or string intern pool.
+
+Qs5. What do you mean by mutable and immutable objects?
+Ans: 
+In Java, objects can be either mutable or immutable. Mutable objects can be changed after they are created, while immutable objects cannot.
+Here are some examples of mutable objects in Java:
+Arrays, Strings, Collections like ArrayList and HashMap, and Custom classes that you create.
+Here are some examples of immutable objects in Java:
+Integer, String, Boolean, Double, and Float.
+Mutable objects are useful in situations where you need to modify the state of an object frequently, such as in a loop or when dealing with collections. Immutable objects are useful in situations where you need to ensure that the state of an object does not change, such as when passing an object to a method as an argument.
+
+Qs6. Where exactly is the string constant pool located in memory.
+Ans: The Java string constant pool, also known as the String Pool or String Intern Pool, is located in the heap memory. The heap is a section of memory used for run-time operations.
+-------------------------------------------------------------------------------------------------------------
+
+Qs1. What is Mutable String in Java Explain with an example
+Ans: A mutable string in Java is a string that can be changed after it has been created. This is in contrast to an immutable string, which cannot be changed. Java's String class is immutable, which means that once a string object is created, its contents cannot be changed. However, there are two other classes in Java that can be used to create mutable strings: StringBuffer and StringBuilder.
+StringBuffer and StringBuilder are both mutable string classes, which means that their contents can be changed after they have been created. This is because they use a different internal representation than the String class. StringBuffer and StringBuilder are both thread-safe, which means that they can be used safely in multithreaded applications.
+Ex: 
+StringBuffer mutableString = new StringBuffer("Hello, World!");
+mutableString.append(" How are you?");
+System.out.println(mutableString);
+
+Qs2. WAP to reverse a String: Input:-"PWKILLS" Output:-"SLLIKSWP"
+public class ReverseString {
+
+    public static void main(String[] args) {
+        String ntst = "";
+        String str = "PWKILLS";
+        System.out.println("Original String: " + str);
+        for (int i = 0; i < str.length(); ++i) {
+
+            char chr = str.charAt(i);
+            ntst = chr + ntst;
+        }
+
+        System.out.println("Reverse String is: " + ntst);
+
+    }
+}
+
+Qs3. WAP to reverse a sentence while preserving the position
+Input: Think Twice
+Output: "kniht eciwt"
+public class ReverseSentencePreserveSpace {
+
+  public static String reverseSentence(String sentence) {
+    char[] chars = sentence.toCharArray();
+    int left = 0;
+    int right = chars.length - 1;
+
+    // Skip leading and trailing spaces
+    while (left < right && Character.isSpaceChar(chars[left])) {
+      left++;
+    }
+    while (left < right && Character.isSpaceChar(chars[right])) {
+      right--;
+    }
+
+    // Reverse characters (excluding spaces)
+    while (left < right) {
+      if (!Character.isSpaceChar(chars[left])) {
+        char temp = chars[left];
+        chars[left] = chars[right];
+        chars[right] = temp;
+      }
+      left++;
+      right--;
+    }
+
+    return new String(chars);
+  }
+
+  public static void main(String[] args) {
+    String sentence = "Think Twice";
+    String reversedSentence = reverseSentence(sentence);
+    System.out.println(reversedSentence); // Output: kniht eciwt
+  }
+}
+
+Qs4. WAP to sort a String Alphabetically.
+public class SortString {
+
+    public static String sortAlphabetically(String str) {
+      char[] charArray = str.toCharArray();
+      for (int i = 0; i < charArray.length - 1; i++) {
+        for (int j = i + 1; j < charArray.length; j++) {
+          if (charArray[i] > charArray[j]) {
+            char temp = charArray[i];
+            charArray[i] = charArray[j];
+            charArray[j] = temp;
+          }
+        }
+      }
+      return new String(charArray);
+    }
+  
+    public static void main(String[] args) {
+      String inputString = "apple banana cherry";
+      String sortedString = sortAlphabetically(inputString);
+      System.out.println(sortedString); // Output: "aceblnnpr"
+    }
+  }
+  
+------------------------------------------------------------------------------------------------------
+
+Qs1. Write a simple String program to take input user.
+importjava.util.Scanner;
+public class InputUser{
+    public static void main(String args[]){
+          Scanner sc = new Scanner(System.in);
+          System.out.println("Enter a number");
+          int num = sc.nextInt();
+          System.out.println(num);
+}
+}
+
+Qs2. How do you concatenate tow strings in java? Give an example.
+There are two main ways to concatenate (join) two strings in Java:
+1. Using the + operator:
+This is the most common and straightforward approach. The + operator acts as a string concatenation operator when used with strings on either side.
+code snapped: 
+public class StringConcatenation {
+
+  public static void main(String[] args) {
+    String firstName = "John";
+    String lastName = "Doe";
+    String fullName = firstName + " " + lastName;
+
+    System.out.println(fullName); // Output: John Doe
+  }
+}
+
+2. Using the String.concat method:
+This method is another way to concatenate strings. It's less commonly used than the + operator but can be helpful in certain scenarios.
+Code Snapped:
+public class StringConcatenation {
+
+  public static void main(String[] args) {
+    String firstName = "Jane";
+    String lastName = "Smith";
+    String fullName = firstName.concat(" ").concat(lastName);
+
+    System.out.println(fullName); // Output: Jane Smith
+  }
+}
+
+Qs3. How do you find the length of a string in java explain with an example?
+Ans: 
+Finding the length of a string in Java is quite straightforward. You can use the built-in length() method, which returns the number of characters in the string. Here's an example:
+Code Snapped: 
+String myString = "Hello, World!";
+int length = myString.length();
+System.out.println("The length of the string is: " + length);
+
+
+Qs4. How do you compare two strings in Java? Give an Example.
+Methods to Compare Strings in Java
+Below are 5 ways to compare two Strings in Java:
+
+Using user-defined function
+Using String.equals()
+Using String.equalsIgnoreCase()
+Using Objects.equals()
+Using String.compareTo()
+
+Code Snapped:
+String str1 = "Hello";
+String str2 = "Hello";
+
+if (str1.equals(str2)) {
+    System.out.println("The strings are equal.");
+} else {
+    System.out.println("The strings are not equal.");
+}
+
+Qs5. Write a program to find the length of the string "refrigerator".
+code snapped:
+public class Main {
+    public static void main(String[] args) {
+        String str = "refrigerator";
+        int length = 0;
+        for (int i = 0; i < str.length(); i++) {
+            length++;
+        }
+        System.out.println("Length of the string is: " + length);
+    }
+}
+
+Qs6. WAP to check if the letter 'e' is present in the word 'Umbrella'.
+public class CheckLetter {
+
+  public static boolean isLetterPresent(String word, char letter) {
+    for (char c : word.toCharArray()) {
+      if (Character.toLowerCase(c) == letter) { // Handle case-insensitive check
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public static void main(String[] args) {
+    String word = "Umbrella";
+    char letter = 'e';
+    boolean isPresent = isLetterPresent(word, letter);
+
+    if (isPresent) {
+      System.out.println("Letter '" + letter + "' is present in '" + word + "'");
+    } else {
+      System.out.println("Letter '" + letter + "' is not present in '" + word + "'");
+    }
+  }
+}
+
+Qs7. WAP to delete all consonants from the string "Hello, have a good day".
+
+public class DeleteConsonants {
+
+  public static String removeConsonants(String str) {
+    String vowels = "aeiouAEIOU";
+    String newString = "";
+    for (char c : str.toCharArray()) {
+      boolean isVowel = false;
+      for (int j = 0; j < vowels.length(); j++) {
+        if (c == vowels.charAt(j)) {
+          isVowel = true;
+          break;
+        }
+      }
+      if (isVowel || Character.isSpaceChar(c)) {
+        newString += c;
+      }
+    }
+    return newString;
+  }
+
+  public static void main(String[] args) {
+    String inputString = "Hello, have a good day";
+    String vowelsOnly = removeConsonants(inputString);
+    System.out.println(vowelsOnly); // Output: eoaeaooa
+  }
+}
+
