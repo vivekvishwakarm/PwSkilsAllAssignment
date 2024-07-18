@@ -1,0 +1,73 @@
+                               Inheritance, Polymorphism and Abstraction Assignment
+
+Qs1) What is Inheritance in Java?
+Ans: Inheritance in Java is a fundamental concept in object-oriented programming (OOP) that allows a class to inherit properties (fields) and behaviors (methods) from another class.
+Key terms:
+Superclass (Parent class): The class whose features are inherited.
+Subclass (Child class): The class that inherits features from the superclass.
+"extends" keyword: Used to indicate that a class inherits from another class. 
+
+Qs2) What is superclass and subclass?
+Ans: In Java, superclass and subclass are key concepts related to inheritance, a fundamental principle of object-oriented programming. Here's a breakdown:
+Superclass (also called base class or parent class):
+This is the class that is being inherited from.
+It serves as a template or blueprint for creating other classes.
+It defines common attributes (variables) and behaviors (methods) that are shared by its subclasses.
+Subclass (also called derived class, extended class, or child class):
+This is the class that inherits properties and functionalities from a superclass.
+It automatically gains access to all non-private members (variables and methods) of its superclass.
+In addition to inherited members, it can have its own unique attributes and behaviors. 
+
+Qs3) How is inheritance implemented/achieved in Java?
+Ans: Inheritance in Java is achieved using the extends keyword.
+Here's how it works:
+Parent Class (Superclass):
+This is the class that provides its properties and methods to another class.
+Child Class (Subclass):
+This is the class that inherits properties and methods from the parent class using the extends keyword.
+
+Qs4) What is polymorphism?
+Ans: Polymorphism in Java is a core concept of Object-Oriented Programming (OOP) that allows objects of different classes to be treated as objects of a common superclass. In simpler words, it allows a single action to be performed in different ways depending on the object type.
+Types of Polymorphism in Java:
+Compile-time Polymorphism (Static Polymorphism):
+This type is resolved during compilation time. It is achieved through method overloading and operator overloading.
+Method Overloading: When two or more methods in the same class have the same name but different parameters (different number of parameters, different types of parameters, or different order of parameters).
+Runtime Polymorphism (Dynamic Polymorphism):
+This type is resolved during runtime. It is achieved through method overriding.
+Method Overriding: When a subclass provides a specific implementation of a method that is already defined in its superclass.
+
+Qs5) Differentiate between method overloading and overriding.
+Ans: Method Overloading: When two or more methods in the same class have the same name but different parameters (different number of parameters, different types of parameters, or different order of parameters).
+Method Overriding: When a subclass provides a specific implementation of a method that is already defined in its superclass.
+
+Qs6) What is an abstraction explained with an Example?
+Ans: Abstraction is a fundamental concept in object-oriented programming (OOP) that enables you to expose only the essential features of an object while hiding its internal implementation details. In Java, abstraction is achieved through abstract classes and interfaces. For example, consider a BankAccount class that provides a withdraw() method, while hiding its internal logic for debit and credit operations. A user interacting with the BankAccount object only needs to know that it can withdraw money, without being concerned with how the transaction is processed. This abstraction helps in reducing complexity and promoting modularity in software design.  
+
+Qs7) What is the difference between an abstract method and final method in java? Explain with an example.
+Ans: In Java, both abstract and final methods are modifiers that dictate how a method can be used within inheritance hierarchies. They serve opposite purposes:
+Abstract Method:
+Definition: An abstract method is declared without an implementation (body) using the abstract keyword. It is meant to be overridden by subclasses, providing a common interface for different implementations.
+Purpose: Enforces subclasses to provide concrete implementations for the method, ensuring specific behavior across all derived classes.
+Final Method:
+Definition: A final method is declared using the final keyword, preventing it from being overridden by any subclasses.
+Purpose: Guarantees that the behavior of the method remains unchanged throughout the inheritance hierarchy, preserving its implementation.
+
+Qs8) What is the final class in Java?
+Ans: In Java, a final class is a class that cannot be extended or subclassed. This means that you cannot create a new class that inherits properties and behaviors from a final class.
+
+Qs9) Differentiate between abstraction and encapsulation.
+Ans: Encapsulation
+It is also a feature of OOP. It is used to bind up the data into a single unit called class. It provides the mechanism which is known as data hiding. It is an important feature of OOPs. It prevents to access data members from the outside of the class. It is also necessary from the security point of view.
+Abstraction
+It is a feature of OOPs. It is used to hide the unnecessary information or data from the user but shows the essential data that is useful for the user. It can be achieved by using the interface and the abstract class. In interfaces, only the methods are exposed to the end-user. The best example of abstraction is a TV remote. The user only interacts with the outer interface that is nothing but keys. The user only knows which key to press for what function.
+
+Qs10) Differentiate between Runtime and compile time polymorphism explain with an example.
+Ans: In Java, polymorphism allows objects of different classes to be treated as objects of a common superclass. This enables flexible and reusable code. There are two main types of polymorphism in Java: compile-time and runtime.
+Compile-time Polymorphism (Static Polymorphism):
+Achieved through: Method overloading
+Decision made at: Compile time
+Explanation: In method overloading, multiple methods with the same name but different parameter lists are defined within the same class. The compiler determines which method to call based on the number, types, and order of arguments passed during the method call.
+Runtime Polymorphism (Dynamic Polymorphism):
+Achieved through: Method overriding
+Decision made at: Runtime
+Explanation: In method overriding, a subclass provides a specific implementation of a method that is already defined in its superclass. The method in the subclass must have the same name, return type, and parameter list as the method in the superclass. The decision of which method to call is determined at runtime based on the actual object type, not the reference type.
