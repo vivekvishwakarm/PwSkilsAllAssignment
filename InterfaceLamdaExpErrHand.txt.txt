@@ -1,0 +1,319 @@
+                          Interface, Lambda Expression and Error Handling
+
+Qs1. What is an interface in Java?
+Ans: An interface in Java is a blueprint of a class. It defines a set of methods that a class must implement. It's like a contract: if a class implements an interface, it promises to provide implementations for all the methods defined in that interface.
+Key Characteristics of Interfaces:
+Abstract Methods: All methods declared in an interface are implicitly public and abstract. This means they have no method body.   
+Constants: Interfaces can contain constants (public, static, and final variables).   
+No Constructors: Interfaces cannot have constructors.
+Multiple Inheritance: A class can implement multiple interfaces, unlike single inheritance for classes.   
+Achieving Abstraction: Interfaces are used to achieve abstraction, focusing on what a class can do rather than how it does it.
+Example:-
+interface Drawable {
+    void draw();
+}
+
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a circle");   
+
+    }
+}
+
+Qs2. Can you pass lambda expressions to a method? When?
+Ans: Yes, you can pass lambda expressions as arguments to methods in Java. This is possible because lambda expressions are essentially implementations of functional interfaces, which are interfaces with only one abstract method.
+import java.util.ArrayList;
+import java.util.List;
+
+public class LambdaExample {
+
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+
+        // Pass a lambda expression to the filter method
+        numbers.stream().filter(n -> n % 2 == 0).forEach(System.out::println);
+    }
+}
+
+Q3. What is the functional interface in Java 8?
+Ans: In Java 8, a functional interface is an interface that contains exactly one abstract method. It can have any number of default or static methods, but only one abstract method. 
+Functional interfaces are the foundation for using lambda expressions in Java. Lambda expressions provide a concise way to represent an implementation of a functional interface.
+Examples of functional interfaces in Java 8:
+Runnable:
+Represents a task that can be executed. It has a single abstract method run().
+Predicate<T>:
+Represents a function that takes an argument and returns a boolean value. It has a single abstract method test(T t).
+Consumer<T>:
+Represents a function that takes an argument and performs some action with it. It has a single abstract method accept(T t).
+Function<T, R>:
+Represents a function that takes an argument of type T and returns a value of type R. It has a single abstract method apply(T t).
+Benefits of functional interfaces:
+Enables lambda expressions: Lambda expressions provide a more concise way to write code.
+Improves code readability: Functional interfaces make it easier to understand the intent of the code.
+Supports functional programming: Functional interfaces allow you to use concepts like higher-order functions and lazy evaluation.
+
+Qs4. Why do we use lambda expressions in Java?
+Ans: Lambda expressions, introduced in Java 8, bring several benefits to the table:
+Concise Code:
+They allow you to write shorter, more readable code by eliminating the need for anonymous inner classes. This is especially useful when working with functional interfaces, which have only one abstract method.
+Functional Programming:
+Lambda expressions enable a more functional programming style in Java, allowing you to treat functions as first-class citizens. You can pass functions as arguments to other functions, store them in variables, and return them from functions.
+Improved Collections API:
+Lambda expressions work beautifully with the Stream API, introduced in Java 8. This enables you to perform powerful operations on collections, such as filtering, mapping, and reducing, in a concise and declarative way.
+Parallel Processing:
+The Stream API, combined with lambda expressions, makes it easier to parallelize operations on collections, potentially improving performance.
+Cleaner API Design:
+Lambda expressions allow for cleaner and more intuitive API design by enabling the use of functional interfaces as method parameters.
+Example:
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+names.sort((s1, s2) -> s1.length() - s2.length());
+
+Qs5. Is it mandatory for a lambda expression to have paramters?
+Ans: No, it is not mandatory for a lambda expression to have parameters in Java. You can define a lambda expression without any parameters.
+Here's an example:
+// Lambda expression with no parameters
+Runnable runnable = () -> System.out.println("Hello World!");
+runnable.run();
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Qs1. What is an interface in Java?
+Ans: An interface in Java is a blueprint of a class. It defines a set of methods that a class must implement. It's like a contract: if a class implements an interface, it promises to provide implementations for all the methods defined in that interface.
+Key Characteristics of Interfaces:
+Abstract Methods: All methods declared in an interface are implicitly public and abstract. This means they have no method body.   
+Constants: Interfaces can contain constants (public, static, and final variables).   
+No Constructors: Interfaces cannot have constructors.
+Multiple Inheritance: A class can implement multiple interfaces, unlike single inheritance for classes.   
+Achieving Abstraction: Interfaces are used to achieve abstraction, focusing on what a class can do rather than how it does it.
+Example:-
+interface Drawable {
+    void draw();
+}
+
+class Rectangle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+
+class Circle implements Drawable {
+    public void draw() {
+        System.out.println("Drawing a circle");   
+
+    }
+}
+
+Qs2. Which modifiers are allowed for methods in an Interface? Explain with an example
+Ans: In Java, the following modifiers are allowed for methods in an interface:
+public:
+This is the default access modifier for interface methods. It means the method can be accessed from any class.
+abstract:
+This modifier specifies that the method does not have a body and must be implemented by any class that implements the interface. Before Java 8, all methods in an interface were implicitly abstract.
+default:
+Introduced in Java 8, this modifier allows you to provide a default implementation for a method in an interface. Classes implementing the interface can choose to use the default implementation or override it with their own.
+static:
+Also introduced in Java 8, this modifier allows you to define static methods in an interface. These methods can be called directly on the interface without needing an instance of a class that implements the interface.
+
+Qs3. What is the use of interface in Java? Or, why do we use an interface in Java?
+Ans: In Java, interfaces are a core concept that specify a class's behavior using an abstract type. They're used to establish a common behavior across classes and achieve abstraction and multiple inheritance. Here's how interfaces are used in Java:
+Define contracts
+Interfaces define a contract for subclasses to implement, outlining which methods classes must implement without revealing implementation details.
+Achieve multiple inheritance
+Since Java classes can only inherit from one superclass, interfaces enable classes to implement multiple interfaces and inherit functionality from various sources.
+Hide details
+Interfaces can hide certain object details and only show the important ones, which can help achieve security.
+Enable functionalities
+Interfaces can allow classes to have functionalities that might not logically belong to them.
+Loosely couple code
+Interfaces can loosely couple the code that interacts with end users to the code running on the server.
+Create collections
+Interfaces can be used to create collections with an interface as the element type, and fill them with objects of different types.
+
+Qs4. What is the difference between abstract class and interface in Java.
+Ans: Abstract Class vs Interface in Java
+Abstract class and interface are two fundamental concepts in Java used to achieve abstraction. While they share some similarities, they have distinct characteristics and purposes.
+
+Abstract Class
+Definition: An abstract class is a partially completed class that contains at least one abstract method.
+Purpose: Provides a common blueprint for related classes, offering a base for code reuse and polymorphism.
+Characteristics:
+Can contain both abstract and non-abstract methods.
+Can have instance variables (final, non-final, static, non-static).
+Can provide implementation for methods.
+Supports single inheritance (a class can extend only one abstract class).
+Can have constructors.
+Interface
+Definition: An interface is a completely abstract class that contains only abstract methods (before Java 8) and can also contain default and static methods (from Java 8).
+Purpose: Defines a contract that classes must adhere to, promoting code reusability and polymorphism.
+Characteristics:
+Contains only abstract methods (before Java 8), default and static methods (from Java 8).
+Can have only static and final variables (constants).
+Does not provide implementation for methods.
+Supports multiple inheritance (a class can implement multiple interfaces).
+Cannot have constructors.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Qs1. Explain different types of Errors in Java?
+Ans: Types of Errors in Java
+Errors in Java can be broadly classified into three categories:
+
+1. Syntax Errors
+Definition: These are grammatical mistakes in the code that prevent the compiler from understanding the program.
+Examples:
+Missing semicolon
+Misspelled keywords
+Unbalanced parentheses
+Incorrect use of operators
+Detection: Caught by the compiler during compilation.
+2. Runtime Errors
+Definition: These errors occur during the execution of a program, causing it to terminate abruptly. They are also known as exceptions.
+Examples:
+Division by zero
+ArrayIndexOutOfBoundsException
+NullPointerException
+OutOfMemoryError
+Detection: Not caught by the compiler, but can be handled using try-catch blocks.
+3. Logical Errors
+Definition: These errors occur when the program runs without errors but produces incorrect results.
+Examples:
+Incorrect calculations
+Wrong algorithm
+Missing or extra conditions
+Detection: Most difficult to find as they don't generate any error messages. Testing and debugging are essential for identifying logical errors.
+Further Classification of Runtime Errors:
+Checked Exceptions: These exceptions are checked by the compiler, and the programmer must handle them using try-catch blocks or declare them in the method signature.
+Examples: IOException, SQLException, FileNotFoundException
+Unchecked Exceptions: These exceptions are not checked by the compiler, and handling them is optional.
+Examples: ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException.
+
+Qs2. What is an Exception in Java?
+Ans: Exceptions in Java
+An exception is an event that occurs during the execution of a program that disrupts the normal flow of the program's instructions. It's essentially an error condition that arises unexpectedly.   
+
+Why Exceptions?
+Error handling: Exceptions provide a structured way to handle errors and unexpected situations.   
+Code clarity: Separating error handling code from normal program logic improves readability.
+Robustness: Applications can continue to run even when errors occur.
+Types of Exceptions
+Checked Exceptions: These must be handled explicitly using try-catch blocks or declared with throws keyword in method signature.
+Examples: IOException, SQLException, FileNotFoundException
+Unchecked Exceptions: These are runtime exceptions and don't need to be explicitly handled, but it's generally recommended to handle them for robustness.
+Examples: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.
+
+Qs4. Why do we need exception handling in Java?
+Ans: Exception handling in Java is crucial for creating robust and reliable applications. Here are a few key reasons:
+Graceful Recovery from Errors:
+Exceptions allow you to handle unexpected situations during program execution without crashing the application. You can catch exceptions, log them, and provide meaningful feedback to the user.
+Maintaining Program Flow:
+Without exception handling, an error would terminate the program abruptly. Exception handling lets you control the flow of execution, allowing you to continue running the program even after encountering errors.
+Separating Error Handling Logic:
+Exception handling mechanisms allow you to separate the main logic of your program from the error handling code, making your code more organized and readable.
+Identifying Error Types:
+Java's exception hierarchy allows you to catch specific types of exceptions, enabling you to handle different errors in a targeted manner.
+Debugging:
+Exception handling provides valuable information about the error, including its type and location in the code. This information helps you identify and fix the root cause of the problem.
+Example:
+try {
+  int result = 10 / 0; // This will throw an ArithmeticException
+} catch (ArithmeticException e) {
+  System.out.println("Error: Division by zero.");
+}
+
+Qs3. How can you handle exceptions in Java? Explain with an example.
+Ans: In Java, exceptions are handled using a combination of try, catch, and finally blocks.
+1. The try block: This block encloses the code that might throw an exception.
+2. The catch block: This block follows the try block and specifies the type of exception it can handle. If an exception of the specified type occurs in the try block, the code inside the corresponding catch block is executed.
+3. The finally block: This block is optional and follows the catch block(s). The code inside the finally block is always executed, regardless of whether an exception was thrown or not. It's typically used to clean up resources, like closing files or network connections.
+try {
+    int result = 10 / 0; // This will throw an ArithmeticException
+    System.out.println("Result: " + result);
+} catch (ArithmeticException e) {
+    System.out.println("Error: Division by zero!");
+} finally {
+    System.out.println("This will always execute.");
+}
+In this example, we attempt to divide by zero, which throws an ArithmeticException. The catch block catches this exception and prints an error message. Finally, the finally block executes, printing a message that always runs.
+
+Qs.5 What is the difference between exception and error in Java?
+Ans: In Java, both exceptions and errors represent abnormal situations that can occur during program execution. However, they differ in their severity and how they are handled:
+1. Severity:
+Errors:
+Represent serious problems that are usually outside the control of the program, such as running out of memory or a system crash. Errors are typically fatal and not recoverable.
+Exceptions:
+Represent unexpected events that occur during program execution due to issues within the code itself, such as invalid input or a file not found. Exceptions can often be handled and recovered from using try-catch blocks. 
+2. Hierarchy:
+Errors: Inherit from the java.lang.Error class.
+Exceptions: Inherit from the java.lang.Exception class.
+3. Checked vs. Unchecked:
+Errors:
+All errors are unchecked, meaning the compiler does not force you to handle them explicitly.
+Exceptions:
+Can be checked or unchecked.
+Checked Exceptions: The compiler forces you to handle them using try-catch blocks or declare them using the throws keyword. Examples: IOException, SQLException.
+Unchecked Exceptions: Also known as runtime exceptions, the compiler does not enforce handling. Examples: NullPointerException, ArrayIndexOutOfBoundsException.
+4. Recovery:
+Errors:
+Usually not recoverable. The best approach is to log the error and terminate the program gracefully.
+Exceptions:
+Can be recovered from using try-catch blocks. This allows you to handle the exception gracefully, such as displaying an error message to the user or retrying the operation.
+Example:
+try {
+    int result = 10 / 0; // This will throw an ArithmeticException (unchecked)
+} catch (ArithmeticException e) {
+    System.out.println("Error: Division by zero.");
+}
+
+Qs6. Name the different types of exceptions in Java.
+Ans: Java exceptions can be categorized in several ways:
+1. Checked vs Unchecked:
+Checked Exceptions:
+These are checked by the compiler at compile time. You must handle them explicitly using try-catch blocks or declare them using the throws keyword in the method signature. Examples: IOException, ClassNotFoundException.
+Unchecked Exceptions:
+These are not checked at compile time. They occur during runtime and are typically caused by programming errors. You are not required to handle them explicitly, but you can. Examples: NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException.
+2. Hierarchy:
+Throwable:
+The base class for all exceptions and errors.
+Exception:
+Subclass of Throwable representing exceptional conditions that can be caught and handled by applications.
+RuntimeException:
+Subclass of Exception representing unchecked exceptions that occur during runtime.
+Error:
+Subclass of Throwable representing serious problems that usually cannot be handled by applications. Examples: OutOfMemoryError, StackOverflowError. 
+Some Common Exception Types:
+NullPointerException: Thrown when trying to access a member of a null object.
+ArrayIndexOutOfBoundsException: Thrown when trying to access an array element with an invalid index.
+ArithmeticException: Thrown when an arithmetic operation produces an incorrect result (e.g., division by zero).
+ClassNotFoundException: Thrown when a class is not found in the classpath.
+IOException: Thrown when an input/output operation fails.
+NumberFormatException: Thrown when trying to convert a string to a numeric type and the string is not formatted correctly. 
+
+Qs7. Can we just use try instead of finally and catch blocks?
+Ans: No, you cannot just use a try block without a catch or finally block in Java.
+Here's why:
+Purpose of each block:
+try: This block contains the code that might throw an exception.
+catch: This block handles the exception if one occurs in the try block.
+finally: This block executes regardless of whether an exception is thrown or not. It's commonly used for cleanup operations like closing files or database connections.
+Syntax requirements:
+A try block must be followed by either a catch block, a finally block, or both. 
+Example:
+try (FileReader reader = new FileReader("file.txt")) {
+    // Code that might throw an exception
+} catch (IOException e) {
+    // Handle the exception
+}
+
+
+
+
+
+ 
