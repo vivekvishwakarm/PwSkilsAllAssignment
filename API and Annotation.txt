@@ -1,0 +1,136 @@
+                                              API and Annotation
+
+Qs1. Program to display current date and time in Java.
+Ans: To display the current date and time in Java, you can use the `SimpleDateFormat` class. Here is a simple program:
+
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        System.out.println(dateFormat.format(date));
+    }
+}
+```
+
+In this program, the `SimpleDateFormat` object is used to specify the format of the date. The `format` method is called with the current date and time to get a string representation of the date in the specified format. 
+
+Qs2. What a program to convert a date to a string in the format "MM/dd/yyyy".
+Ans:  To convert a date to a string in the format "MM/dd/yyyy" in Java, you can use the SimpleDateFormat class. Here's an example:
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateToString {
+    public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        String formattedDate = df.format(date);
+        System.out.println(formattedDate);
+    }
+}
+```
+This program will output the current date in the format "MM/dd/yyyy". You can replace the `new Date()` with your own date object if needed.  
+
+Qs3. What is the difference between collections and streams? Explain with an Example.
+Ans: In Java, collections and streams are both used to work with groups of data, but they have fundamental differences in how they store and process data.
+Collections:
+Storage: Collections store elements in memory.
+Eager Evaluation: Elements are computed and stored in the collection before any operations are performed.
+Mutability: You can add or remove elements from a collection.
+Iteration: You typically iterate over a collection using loops or iterators.
+Streams:
+Storage: Streams don't store elements. They are a pipeline for processing data.
+Lazy Evaluation: Elements are computed on demand as they are needed.
+Immutability: You cannot modify the source of a stream.
+Iteration: Streams use internal iteration, often with functional-style operations like filter, map, and reduce.
+Example:
+Java
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class CollectionsVsStreams {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+        // Using Collections
+        List<Integer> evenNumbers = new ArrayList<>();
+        for (int num : numbers) {
+            if (num % 2 == 0) {
+                evenNumbers.add(num);
+            }
+        }
+
+        System.out.println("Even numbers (Collections): " + evenNumbers);
+
+        // Using Streams
+        List<Integer> evenNumbersStream = numbers.stream()
+                .filter(num -> num % 2 == 0)
+                .collect(Collectors.toList());
+
+        System.out.println("Even numbers (Streams): " + evenNumbersStream);
+    }
+}
+
+Qs4. What is enums in Java? Explain with an example.
+Ans: In Java, an enum (short for "enumeration") is a special data type that represents a group of named constants. It's a way to define a set of fixed values that a variable can take.
+Example:
+Java
+
+enum Day {
+    SUNDAY, MONDAY, TUESDAY, WEDNESDAY,
+    THURSDAY, FRIDAY, SATURDAY 
+}
+
+public class EnumExample {
+
+    public static void main(String[] args) {
+        Day today = Day.TUESDAY;
+
+        switch (today) {
+            case MONDAY:
+                System.out.println("It's the start of the week.");
+                break;
+            case FRIDAY:
+                System.out.println("Almost the weekend!");
+                break;
+            case SATURDAY:
+            case SUNDAY:
+                System.out.println("It's the weekend!");
+                break;
+            default:
+                System.out.println("It's a weekday.");
+        }
+    }
+}
+
+Benefits of using Enums:
+- Readability: Enums make your code more readable and self-explanatory.
+- Type Safety: Enums prevent you from assigning invalid values to a variable.
+- Maintainability: Enums make it easier to manage a set of constants, as they are grouped together in a single place.
+
+Qs5. What are in-built annotations in Java?
+Ans: Java provides several built-in annotations:
+General Annotations:
+@Deprecated:
+Marks a method or class as deprecated, indicating that it should no longer be used. The compiler generates a warning when this is used.
+@Override:
+Indicates that a method is overriding a method in a superclass. The compiler generates an error if the method doesn't exist in the superclass.
+@SuppressWarnings:
+Tells the compiler to suppress specific warnings.
+@FunctionalInterface:
+(Since Java 8) Marks an interface as a functional interface, meaning it has only one abstract method.
+Meta-Annotations:
+@Retention: Specifies how long the annotation should be retained. Options are:
+RetentionPolicy.SOURCE: Discarded by the compiler.
+RetentionPolicy.CLASS: Stored in the class file but not available at runtime.
+RetentionPolicy.RUNTIME: Available at runtime through reflection.
+@Target: Specifies the types of elements the annotation can be applied to (e.g., methods, classes, fields).
+@Documented: Indicates that the annotation should be included in the generated JavaDoc.
+@Inherited: Specifies that the annotation is inherited by subclasses.
+@Repeatable: (Since Java 8) Allows the same annotation to be applied multiple times to a single element.
