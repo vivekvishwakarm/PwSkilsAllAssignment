@@ -1,0 +1,80 @@
+                                      Multithreading
+
+Qs1. What do you mean by Multithreading? Why is it important?
+Ans: In Java, multithreading refers to the ability of a program to execute multiple threads concurrently. 
+Key points:
+Thread:
+A thread is a lightweight sub-process, the smallest unit of processing that the operating system can schedule.
+Concurrency:
+Multithreading allows you to achieve concurrency, which means performing multiple tasks simultaneously.
+Benefits:
+Multithreading can improve the performance of your Java applications by:
+Responsiveness: Keeping the user interface responsive even when performing time-consuming operations in the background.
+Resource utilization: Utilizing the CPU more efficiently by overlapping I/O operations with computation.
+Scalability: Improving the performance of applications on multi-core processors.
+How to implement multithreading in Java:
+Extending the Thread class:
+Create a new class that extends the Thread class and override the run() method with the code you want to execute in the thread.
+Implementing the Runnable interface:
+Create a class that implements the Runnable interface and defines the run() method. Then, create a Thread object and pass an instance of the Runnable class to its constructor.
+Multithreading in Java is important for several reasons:
+Performance Improvement:
+Concurrency:
+Multithreading allows multiple threads to execute concurrently, which can significantly improve the performance of applications, especially those that perform I/O operations or utilize multiple CPU cores.
+Responsiveness:
+Using separate threads for tasks like user interface updates and background operations, applications can remain responsive even when performing time-consuming tasks.
+
+Qs2. What are the benefits of using Multithreading?
+Ans: Multithreading in Java offers several benefits:
+Performance and Responsiveness:
+Improved throughput:
+Multiple threads can execute concurrently, utilizing multiple CPU cores effectively. This can lead to faster execution of tasks and improved overall performance, especially for tasks that can be parallelized.
+Better responsiveness:
+Multithreading allows you to create responsive applications that can handle multiple tasks simultaneously. For example, a GUI application can remain responsive to user input while performing background tasks in separate threads.
+Efficient resource utilization:
+Threads share the same memory space and resources of their parent process, making them lighter weight than separate processes. This reduces the overhead associated with creating and managing multiple processes.
+Simplified Development:
+Modeling real-world scenarios:
+Many real-world problems can be naturally represented as concurrent tasks. Multithreading allows you to structure your code to reflect this parallelism.
+Improved code structure:
+Multithreading can help break down complex tasks into smaller, more manageable units of work, leading to a cleaner and more organized codebase.
+Easier handling of asynchronous operations:
+Multithreading simplifies the handling of asynchronous operations, such as network requests or file I/O, by allowing them to be performed in the background without blocking the main application thread.
+
+Qs3. What is Thread in Java?
+Ans: In Java, a thread represents a single path of execution within a program. It allows you to perform multiple tasks concurrently, improving the responsiveness and performance of your applications.
+Key Points:
+Lightweight Process:
+A thread is often referred to as a lightweight process because it shares the same memory space and resources as the process that created it. This makes threads more efficient to create and manage compared to separate processes.
+Concurrency:
+Threads allow you to execute multiple tasks simultaneously. This is especially useful for tasks that can be performed independently, such as handling user input, performing background calculations, or managing network connections.
+Main Thread:
+Every Java program has at least one thread, known as the main thread, which is created by the Java Virtual Machine (JVM) when the program starts
+
+Qs4. What are the two ways of implementing threads in Java?
+Ans: the two ways are in Java:
+Extending the Thread class:
+Create a new class that extends the Thread class and override the run() method with the code you want to execute in the thread.
+Implementing the Runnable interface:
+Create a class that implements the Runnable interface and defines the run() method. Then, create a Thread object and pass an instance of the Runnable class to its constructor.
+
+Qs5. What's the difference between thread and process?
+Ans: In Java, threads and processes are two fundamental concepts for multitasking. A thread is a single flow of execution within a program. It's lightweight, shares memory, and can be created and destroyed dynamically. Multiple threads can run concurrently, improving program responsiveness and throughput. On the other hand, a process is a separate instance of a program, with its own memory space, resources, and executable code. Processes are heavier and more expensive to create than threads, but they provide better isolation and security. Understanding the differences between threads and processes is crucial for efficient and scalable Java programming.  
+
+Qs6. How can we create daemon threads?
+Ans: In Java, daemon threads are used to perform background tasks without preventing the program from exiting. To create a daemon thread, you can set the daemon flag of the Thread object to true. Here's an example:
+
+```java
+Thread thread = new Thread(new Runnable() {
+    public void run() {
+        // thread code
+    }
+});
+thread.setDaemon(true);
+thread.start();
+```
+
+In the above code, the thread will run in the background as a daemon thread. Note that daemon threads will not wait for the main thread to finish before exiting.  
+
+Qs7. What are the wait() and sleep() methods?
+Ans: The `wait()` and `sleep()` methods in Java are used to suspend the execution of a thread. The primary difference between them is that `wait()` is used to pause the execution of a thread until it is notified, whereas `sleep()` pauses the execution of a thread for a specified amount of time. The `wait()` method is used in conjunction with the `notify()` method to implement synchronization and communication between threads. On the other hand, `sleep()` is typically used to introduce a delay in the execution of a thread.  
